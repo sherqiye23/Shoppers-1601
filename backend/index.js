@@ -1,0 +1,16 @@
+const express = require("express")
+const app = express()
+const cors = require("cors")
+const dotenv = require("dotenv")
+const bodyParser = require("body-parser")
+const route = require("./routers/router")
+require("./config/config")
+app.use(cors())
+app.use(bodyParser.json())
+dotenv.config()
+
+app.listen(process.env.Port, () => console.log("Listen to port 3000"))
+app.use("/shoppers", route)
+app.get("/", (req, res) => {
+    res.send("Salam")
+})

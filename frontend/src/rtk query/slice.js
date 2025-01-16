@@ -29,3 +29,6 @@ export const shoppersApi = createApi({
         })
     }),
 })
+
+export const {useDeleteShopperMutation, usePostShopperMutation, useGetShopperByIdQuery, useGetShoppersQuery} = shoppersApi
+
